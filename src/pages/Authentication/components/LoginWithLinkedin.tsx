@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkedinLogo } from "../../../assets/images";
+import { SvgLinkedinLogo } from "../../../assets/icons";
 
-export const LoginWithLinkedin = () => {
+export const LoginWithLinkedin: React.FC = () => {
   return (
     <Root>
       <Text>or continue with</Text>
       <a href="https://linkeding.com" target="_blank" rel="noreferrer">
-        <Logo src={LinkedinLogo} alt="Linkedin logo" />
+        <Logo />
       </a>
     </Root>
   );
@@ -23,7 +23,7 @@ const Text = styled.p`
   margin-bottom: 24px;
   color: #737373;
 `;
-const Logo = styled.img`
+const Logo = styled(SvgLinkedinLogo)`
   object-fit: contain;
   width: 24px;
 `;

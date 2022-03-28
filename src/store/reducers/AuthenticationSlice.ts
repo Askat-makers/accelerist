@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
 import { IUser } from "../../types";
 import { signIn, signUp } from "../actions/AuthenticationActions";
 

@@ -1,13 +1,12 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { NavMobile } from ".";
+import { SvgMenu } from "../assets/icons";
 import { AltUserLogo, NavLogo } from "../assets/images";
 import { useAppDispatch, useAppSelector } from "../helpers/customHooks";
 import { logOut } from "../store/reducers/AuthenticationSlice";
-import { IUser, INavItem } from "../types";
+import { INavItem } from "../types";
 import { Container } from "./Container";
 
 const navItems: INavItem[] = [
@@ -48,6 +47,10 @@ export const Navbar: React.FC = () => {
     setIsMobileNavOpen((state) => !state);
   };
 
+  const onUserPressed = () => {
+    setIsLogout((isLogout) => !isLogout);
+  };
+
   const handleLogout = () => {
     dispatch(logOut());
     setIsLogout((isLogout) => !isLogout);
@@ -73,8 +76,10 @@ export const Navbar: React.FC = () => {
             </NavList>
           </NavLeft>
           <NavRight>
-            <BurgerMenu icon={faBars} onClick={openAndCloseNav} />
-            <UserBlock onClick={() => setIsLogout((isLogout) => !isLogout)}>
+            <BurgerMenu onClick={openAndCloseNav}>
+              <SvgMenu />
+            </BurgerMenu>
+            <UserBlock onClick={onUserPressed}>
               <UserImage
                 src={user?.user.avatarKey || AltUserLogo}
                 alt="User photo"
@@ -90,6 +95,10 @@ export const Navbar: React.FC = () => {
               navItems={navItems}
               closeNav={openAndCloseNav}
               pathname={location.pathname}
+              isLogout={isLogout}
+              handleLogout={handleLogout}
+              user={user}
+              onUserPressed={onUserPressed}
             />
           )}
         </Nav>
@@ -119,7 +128,7 @@ const NavList = styled.ul`
   display: flex;
   align-items: center;
   margin-left: 48px;
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -145,15 +154,17 @@ const LogOut = styled.button`
   left: 0;
   cursor: pointer;
   border-radius: 4px;
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 1024px) {
     display: none;
   }
 `;
 
-const BurgerMenu = styled(FontAwesomeIcon)`
+const BurgerMenu = styled.button`
   font-size: 24px;
   cursor: pointer;
-  @media all and (min-width: 768px) {
+  border: none;
+  background: transparent;
+  @media all and (min-width: 1024px) {
     display: none;
   }
 `;
@@ -161,7 +172,7 @@ const UserBlock = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 1024px) {
     display: none;
   }
 `;

@@ -1,8 +1,7 @@
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Field, Form } from "react-final-form";
 import styled from "styled-components";
+import { SvgEyeSlash } from "../../../assets/icons";
 import { Button, ErrorSpan, Input } from "../../../components";
 import { useAppDispatch, useAppSelector } from "../../../helpers/customHooks";
 import { signUp } from "../../../store/actions/AuthenticationActions";
@@ -71,9 +70,7 @@ export const Register: React.FC = () => {
                           setIsTypePassword((prevState) => !prevState)
                         }
                       >
-                        <FontAwesomeIcon
-                          icon={isTypePassword ? faEyeSlash : faEye}
-                        />
+                        {isTypePassword ? <SvgEyeSlash /> : <SvgEyeSlash />}
                       </InputTypeSwitch>
                       {meta.error && meta.touched && (
                         <ErrorSpan title={meta.error} />

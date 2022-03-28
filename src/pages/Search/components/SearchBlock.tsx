@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Field, Form } from "react-final-form";
 import styled from "styled-components";
-import { FilterIcon, SearchIcon } from "../../../assets/images";
+import { SvgFilter, SvgSearch } from "../../../assets/icons";
 import { Input } from "../../../components";
 
 interface ISearchBlock {
@@ -41,10 +40,10 @@ export const SearchBlock: React.FC<ISearchBlock> = ({
               )}
             />
             <Button type="submit">
-              <Image src={SearchIcon} />
+              <SvgSearch />
             </Button>
             <Button type="button" onClick={setIsFilter}>
-              <Image src={FilterIcon} />
+              <SvgFilter />
             </Button>
           </CustomForm>
         )}
@@ -77,4 +76,3 @@ const Button = styled.button`
   border: none;
   background: transparent;
 `;
-const Image = styled.img``;

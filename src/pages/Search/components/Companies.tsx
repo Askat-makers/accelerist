@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { DotImage, ImageNotFound, LikeImage } from "../../../assets/images";
+import { SvgDot, SvgLike } from "../../../assets/icons";
+import { ImageNotFound } from "../../../assets/images";
 import { Loader } from "../../../components";
 import { ICompany } from "../../../types";
 
@@ -63,7 +64,7 @@ export const Companies: React.FC<ICompaniesProps> = ({
               </Description>
               <Actions mobile={false}>
                 <Button border="1px solid #e8e8e8" maxWidth="36px">
-                  <Image src={LikeImage} alt="like icon" />
+                  <SvgLike />
                 </Button>
                 <Button border="1px solid #2BAEE0" maxWidth="unset">
                   Profile
@@ -73,7 +74,7 @@ export const Companies: React.FC<ICompaniesProps> = ({
           </Company>
           <Actions mobile={true}>
             <Button border="1px solid #e8e8e8" maxWidth="36px">
-              <Image src={LikeImage} alt="like icon" />
+              <SvgLike />
             </Button>
             <Button border="1px solid #2BAEE0" maxWidth="unset">
               Profile
@@ -226,7 +227,7 @@ const FocusItem = styled.span`
   margin-top: 4px;
   margin-right: 8px;
   &::after {
-    content: url(${DotImage});
+    content: 1;
     margin-left: 8px;
   }
   &:last-child::after {

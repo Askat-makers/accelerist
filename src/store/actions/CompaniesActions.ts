@@ -1,8 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
 import { API } from "../../helpers/const";
-import { ICompany, IFilter, IGetCompaniesResponse } from "../../types";
+import { IFilter, IGetCompaniesResponse } from "../../types";
 
 const getAuthConfig = () => {
   let data = JSON.parse(localStorage.getItem("persist:root") || "null");

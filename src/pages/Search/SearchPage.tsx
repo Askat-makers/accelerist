@@ -13,7 +13,7 @@ export const SearchPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   let search = new URLSearchParams(location.search);
-  const { error, loading, companies, companiesCount } = useAppSelector(
+  const { loading, companies, companiesCount } = useAppSelector(
     (state) => state.company
   );
   const [isFilter, setIsFilter] = useState<boolean>(false);
@@ -46,7 +46,7 @@ export const SearchPage: React.FC = () => {
   useEffect(() => {
     search.set("page", filter.page);
     navigate(`${location.pathname}?${search.toString()}`);
-  }, []);
+  }, [filter.page]);
   return (
     <>
       <Navbar />

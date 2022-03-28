@@ -1,11 +1,12 @@
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import { FolderPlusIcon, MailIcon, UploadIcon } from "../../../assets/images";
+import {
+  SvgArrowLeft,
+  SvgArrowRight,
+  SvgFolderPlus,
+  SvgMail,
+  SvgUpload,
+} from "../../../assets/icons";
 
 interface IFoundBlockProps {
   page: string;
@@ -36,28 +37,26 @@ export const FoundBlock: React.FC<IFoundBlockProps> = ({
       <Wrapper>
         <Actions>
           <Action>
-            <ActionImage src={FolderPlusIcon} alt="folder icon" />
+            <SvgFolderPlus />
             <ActionText>Save List</ActionText>
           </Action>
           <Action>
-            <ActionImage src={UploadIcon} alt="upload icon" />
+            <SvgUpload />
             <ActionText>Save List</ActionText>
           </Action>
           <Action>
-            <ActionImage src={MailIcon} alt="mail icon" />
+            <SvgMail />
             <ActionText>Save List</ActionText>
           </Action>
         </Actions>
         <Pagination>
-          <ArrowIcon
-            icon={faChevronLeft}
-            onClick={() => paginate("page", (+page - 1).toString())}
-          />
+          <span onClick={() => paginate("page", (+page - 1).toString())}>
+            <SvgArrowLeft />
+          </span>
           <Page>{getPaginationInfo(page, companiesCount)}</Page>
-          <ArrowIcon
-            icon={faChevronRight}
-            onClick={() => paginate("page", (+page + 1).toString())}
-          />
+          <span onClick={() => paginate("page", (+page + 1).toString())}>
+            <SvgArrowRight />
+          </span>
         </Pagination>
       </Wrapper>
     </Root>
@@ -90,13 +89,11 @@ const Action = styled.div`
   margin-right: 35px;
   cursor: pointer;
 `;
-const ActionImage = styled.img`
-  margin-right: 9px;
-`;
 const ActionText = styled.span`
   font-size: 12px;
   line-height: 18px;
   color: #122434;
+  margin-left: 8px;
 `;
 const Pagination = styled.div`
   display: flex;
@@ -109,10 +106,6 @@ const Pagination = styled.div`
     justify-content: center;
     width: 100%;
   }
-`;
-const ArrowIcon = styled(FontAwesomeIcon)`
-  font-size: 24px;
-  cursor: pointer;
 `;
 const Page = styled.span`
   font-size: 12px;

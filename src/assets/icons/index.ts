@@ -1,0 +1,17 @@
+export { SvgFilter } from "./SvgFilter";
+export { SvgFolderPlus } from "./SvgFolderPlus";
+export { SvgDot } from "./SvgDot";
+export { SvgLike } from "./SvgLike";
+export { SvgLinkedinLogo } from "./SvgLinkedinLogo";
+export { SvgMail } from "./SvgMail";
+export { SvgSearch } from "./SvgSearch";
+export { SvgUpload } from "./SvgUpload";
+export { SvgArrowLeft } from "./SvgArrowLeft";
+export { SvgArrowRight } from "./SvgArrowRight";
+export { SvgEyeSlash } from "./SvgEyeSlash";
+export { SvgMenu } from "./SvgMenu";
+export { SvgXmark } from "./SvgXmark";
+export {} from "./";
+export {} from "./";
+export {} from "./";
+export {} from "./";
