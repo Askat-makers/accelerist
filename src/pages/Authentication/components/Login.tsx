@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { SvgEyeSlash } from "../../../assets/icons";
 import { Button, ErrorSpan, Input } from "../../../components";
+import { baseTheme } from "../../../helpers/baseTheme";
 import { useAppDispatch, useAppSelector } from "../../../helpers/customHooks";
 import { signIn } from "../../../store/actions/AuthenticationActions";
 import { ICandidateUser } from "../../../types";
@@ -33,7 +34,11 @@ export const Login: React.FC = () => {
         render={({ handleSubmit, hasValidationErrors }) => (
           <form onSubmit={handleSubmit}>
             <InputWrapper>
-              <Label color="#737373" marginLeft="0" marginBottom="4px">
+              <Label
+                color={baseTheme.colors.dark_gray}
+                marginLeft="0"
+                marginBottom="4px"
+              >
                 Email
               </Label>
               <Field
@@ -55,7 +60,11 @@ export const Login: React.FC = () => {
               />
             </InputWrapper>
             <InputWrapper>
-              <Label color="#737373" marginLeft="0" marginBottom="4px">
+              <Label
+                color={baseTheme.colors.dark_gray}
+                marginLeft="0"
+                marginBottom="4px"
+              >
                 Password
               </Label>
               <div>
@@ -88,7 +97,7 @@ export const Login: React.FC = () => {
             <LoginSettings>
               <Wrapper>
                 <Checkbox type={"checkbox"} />
-                <Label color="#122434" marginLeft="11px">
+                <Label color={baseTheme.colors.black} marginLeft="11px">
                   Remember
                 </Label>
               </Wrapper>
@@ -99,8 +108,8 @@ export const Login: React.FC = () => {
               type="submit"
               isDisabled={hasValidationErrors}
               isLoading={loading}
-              bgColor="#2BAEE0"
-              color="#fff"
+              bgColor={baseTheme.colors.blue}
+              color={baseTheme.colors.white}
               paddingTop="12px"
               paddingBottom="12px"
               fsz="16px"
@@ -114,7 +123,7 @@ export const Login: React.FC = () => {
   );
 };
 const ErrorText = styled.p`
-  color: red;
+  color: ${baseTheme.colors.red};
   font-size: 18px;
   text-align: left;
   margin-bottom: 10px;
@@ -152,7 +161,7 @@ const Wrapper = styled.div`
 `;
 const Checkbox = styled.input``;
 const StyledLink = styled(Link)`
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   font-size: 12px;
   line-height: 18px;
 `;

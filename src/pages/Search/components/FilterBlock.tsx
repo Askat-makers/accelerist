@@ -3,6 +3,7 @@ import { getTrackBackground, Range } from "react-range";
 import Select from "react-select";
 import styled from "styled-components";
 import { Button, Input } from "../../../components";
+import { baseTheme } from "../../../helpers/baseTheme";
 import {
   industryOptions,
   scopeOptions,
@@ -397,13 +398,13 @@ export const FilterBlock: React.FC<IFilterBlockProps> = ({ filterCompany }) => {
 };
 
 const Root = styled.div`
-  background: #fff;
+  background: ${baseTheme.colors.white};
   padding: 40px;
   margin-top: 29px;
   max-width: 1095px;
 `;
 const Title = styled.h2`
-  color: #122434;
+  color: ${baseTheme.colors.black};
   font-size: 24px;
   line-height: 35px;
   font-weight: 500;
@@ -418,7 +419,7 @@ const FilterTypes = styled.div`
 const SubTitle = styled.h3`
   font-size: 16px;
   line-height: 23px;
-  color: #122434;
+  color: ${baseTheme.colors.black};
   font-weight: 500;
   margin-top: 34px;
   margin-bottom: 16px;
@@ -436,7 +437,7 @@ const Option = styled.div`
   }
 `;
 const Label = styled.label`
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   font-size: 12px;
   line-height: 18px;
   display: inline-block;

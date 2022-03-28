@@ -3,6 +3,7 @@ import { Field, Form } from "react-final-form";
 import styled from "styled-components";
 import { SvgFilter, SvgSearch } from "../../../assets/icons";
 import { Input } from "../../../components";
+import { baseTheme } from "../../../helpers/baseTheme";
 
 interface ISearchBlock {
   searchValue: string;
@@ -34,7 +35,7 @@ export const SearchBlock: React.FC<ISearchBlock> = ({
                   backgroundColor={"#F1F4F5"}
                   maxWidth={"715px"}
                   minWidth={"343px"}
-                  color={"#737373"}
+                  color={baseTheme.colors.dark_gray}
                   border={"none"}
                 />
               )}

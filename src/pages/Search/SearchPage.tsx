@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Navbar } from "../../components";
 import { Container } from "../../components/Container";
+import { baseTheme } from "../../helpers/baseTheme";
 import { useAppDispatch, useAppSelector } from "../../helpers/customHooks";
 import { getCompanies } from "../../store/actions";
 import { IFilter } from "../../types";
@@ -87,7 +88,7 @@ const Root = styled.div`
 const Header = styled.div`
   padding-top: 24px;
   padding-bottom: 24px;
-  background: #fff;
+  background: ${baseTheme.colors.white};
 `;
 const Wrapper = styled.div`
   display: flex;

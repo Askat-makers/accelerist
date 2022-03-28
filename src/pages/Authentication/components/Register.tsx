@@ -3,6 +3,7 @@ import { Field, Form } from "react-final-form";
 import styled from "styled-components";
 import { SvgEyeSlash } from "../../../assets/icons";
 import { Button, ErrorSpan, Input } from "../../../components";
+import { baseTheme } from "../../../helpers/baseTheme";
 import { useAppDispatch, useAppSelector } from "../../../helpers/customHooks";
 import { signUp } from "../../../store/actions/AuthenticationActions";
 import { ICandidateUser } from "../../../types";
@@ -92,8 +93,8 @@ export const Register: React.FC = () => {
               type="submit"
               isDisabled={hasValidationErrors}
               isLoading={loading}
-              bgColor="#2BAEE0"
-              color="#fff"
+              bgColor={baseTheme.colors.blue}
+              color={baseTheme.colors.white}
               paddingTop="12px"
               paddingBottom="12px"
               fsz="16px"
@@ -108,7 +109,7 @@ export const Register: React.FC = () => {
 };
 
 const ErrorText = styled.p`
-  color: red;
+  color: ${baseTheme.colors.red};
   font-size: 18px;
   text-align: left;
   margin-bottom: 10px;
@@ -119,7 +120,7 @@ const InputWrapper = styled.div`
   flex-direction: column;
 `;
 const Label = styled.label`
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 4px;
@@ -132,6 +133,6 @@ const TermsOfService = styled.p`
   font-size: 12px;
   line-height: 18px;
   text-align: center;
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   padding: 5px;
 `;

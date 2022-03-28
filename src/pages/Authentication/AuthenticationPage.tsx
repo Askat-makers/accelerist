@@ -5,6 +5,7 @@ import {
   AuthenticationLayout,
   Button,
 } from "../../components";
+import { baseTheme } from "../../helpers/baseTheme";
 import { Login, Register, LoginWithLinkedin } from "./components";
 
 export const AuthenticationPage = () => {
@@ -25,7 +26,11 @@ export const AuthenticationPage = () => {
               bgColor={
                 registerOrLogin === "register" ? "#caf0ff" : "transparent"
               }
-              color={registerOrLogin === "register" ? "#122434" : "#737373"}
+              color={
+                registerOrLogin === "register"
+                  ? baseTheme.colors.black
+                  : baseTheme.colors.dark_gray
+              }
               paddingTop={"9px"}
               paddingBottom={"9px"}
               fsz={"12px"}
@@ -37,7 +42,11 @@ export const AuthenticationPage = () => {
               title={"Login"}
               type={"button"}
               bgColor={registerOrLogin === "login" ? "#caf0ff" : "transparent"}
-              color={registerOrLogin === "login" ? "#122434" : "#737373"}
+              color={
+                registerOrLogin === "login"
+                  ? baseTheme.colors.black
+                  : baseTheme.colors.dark_gray
+              }
               paddingTop={"9px"}
               paddingBottom={"9px"}
               fsz={"12px"}

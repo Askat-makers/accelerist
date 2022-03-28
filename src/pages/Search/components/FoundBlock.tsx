@@ -7,6 +7,7 @@ import {
   SvgMail,
   SvgUpload,
 } from "../../../assets/icons";
+import { baseTheme } from "../../../helpers/baseTheme";
 
 interface IFoundBlockProps {
   page: string;
@@ -71,7 +72,7 @@ const Title = styled.h2`
   font-size: 16px;
   line-height: 23.2px;
   font-weight: 500;
-  color: #122434;
+  color: ${baseTheme.colors.black};
   margin-bottom: 24px;
 `;
 const Wrapper = styled.div`
@@ -92,7 +93,7 @@ const Action = styled.div`
 const ActionText = styled.span`
   font-size: 12px;
   line-height: 18px;
-  color: #122434;
+  color: ${baseTheme.colors.black};
   margin-left: 8px;
 `;
 const Pagination = styled.div`
@@ -110,7 +111,7 @@ const Pagination = styled.div`
 const Page = styled.span`
   font-size: 12px;
   line-height: 18px;
-  color: #122434;
+  color: ${baseTheme.colors.black};
   margin-left: 19px;
   margin-right: 19px;
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SvgDot, SvgLike } from "../../../assets/icons";
 import { ImageNotFound } from "../../../assets/images";
 import { Loader } from "../../../components";
+import { baseTheme } from "../../../helpers/baseTheme";
 import { ICompany } from "../../../types";
 
 interface ICompaniesProps {
@@ -63,10 +64,16 @@ export const Companies: React.FC<ICompaniesProps> = ({
                 </Wrapper>
               </Description>
               <Actions mobile={false}>
-                <Button border="1px solid #e8e8e8" maxWidth="36px">
+                <Button
+                  border={`1px solid ${baseTheme.colors.line}`}
+                  maxWidth="36px"
+                >
                   <SvgLike />
                 </Button>
-                <Button border="1px solid #2BAEE0" maxWidth="unset">
+                <Button
+                  border={`1px solid ${baseTheme.colors.blue}`}
+                  maxWidth="unset"
+                >
                   Profile
                 </Button>
               </Actions>
@@ -96,7 +103,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 49%;
   display: flex;
-  background: #fff;
+  background: ${baseTheme.colors.white};
   margin-bottom: 24px;
   border-radius: 6px;
   @media all and (max-width: 768px) {
@@ -113,7 +120,7 @@ const Company = styled.div`
   }
 `;
 const LeftBlock = styled.div`
-  border: 1px solid #e8e8e8;
+  border: 1px solid ${baseTheme.colors.line};
   border-radius: 6px;
   max-width: 168px;
   width: 100%;
@@ -131,10 +138,10 @@ const CompanyRank = styled.div`
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid ${baseTheme.colors.line};
 `;
 const GraySpan = styled.span`
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   font-size: 12px;
   line-height: 18px;
 `;
@@ -173,7 +180,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid ${baseTheme.colors.line};
   @media all and (max-width: 1210px) {
     margin-top: 17px;
   }
@@ -183,7 +190,7 @@ const Wrapper = styled.div`
 `;
 const Focus = styled.div`
   width: 55%;
-  border-right: 1px solid #e8e8e8;
+  border-right: 1px solid ${baseTheme.colors.line};
   padding-bottom: 12px;
   display: flex;
   flex-direction: column;
@@ -239,7 +246,6 @@ const Actions = styled.div<{ mobile: boolean }>`
   align-items: center;
   justify-content: space-between;
   display: ${(props) => (props.mobile ? "none" : "flex")};
-  /* width: 100%; */
   @media all and (max-width: 1055px) {
     display: ${(props) => (props.mobile ? "flex" : "none")};
     width: 100%;

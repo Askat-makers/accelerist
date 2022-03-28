@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { SvgXmark } from "../assets/icons";
 import { AltUserLogo } from "../assets/images";
+import { baseTheme } from "../helpers/baseTheme";
 import { INavItem, IUser } from "../types";
 
 interface INavMobile {
@@ -84,7 +85,7 @@ const Nav = styled.div`
   max-width: 375px;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: ${baseTheme.colors.white};
   padding-top: 34px;
   padding-left: 40px;
   padding-right: 38px;
@@ -98,13 +99,13 @@ const CancelIcon = styled(SvgXmark)`
   cursor: pointer;
   align-self: flex-end;
   font-size: 24px;
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
   margin-bottom: 80px;
 `;
 const NavList = styled.ul``;
 
 const NavItem = styled.li<{ active: string }>`
-  color: #122434;
+  color: ${baseTheme.colors.black};
   font-size: 16px;
   line-height: 155%;
   margin-bottom: 32px;
@@ -124,13 +125,13 @@ const Username = styled.h5`
   font-weight: 400;
   font-size: 16px;
   line-height: 155%;
-  color: #122434;
+  color: ${baseTheme.colors.black};
 `;
 const LogOut = styled.button`
-  background-color: white;
+  background-color: ${baseTheme.colors.white};
   width: 100%;
   padding: 5px;
-  color: red;
+  color: ${baseTheme.colors.red};
   border: 1px solid red;
   margin-top: 10px;
   cursor: pointer;

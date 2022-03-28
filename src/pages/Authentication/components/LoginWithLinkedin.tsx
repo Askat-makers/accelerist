@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SvgLinkedinLogo } from "../../../assets/icons";
+import { baseTheme } from "../../../helpers/baseTheme";
 
 export const LoginWithLinkedin: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Text = styled.p`
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 24px;
-  color: #737373;
+  color: ${baseTheme.colors.dark_gray};
 `;
 const Logo = styled(SvgLinkedinLogo)`
   object-fit: contain;

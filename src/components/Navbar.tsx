@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { NavMobile } from ".";
 import { SvgMenu } from "../assets/icons";
 import { AltUserLogo, NavLogo } from "../assets/images";
+import { baseTheme } from "../helpers/baseTheme";
 import { useAppDispatch, useAppSelector } from "../helpers/customHooks";
 import { logOut } from "../store/reducers/AuthenticationSlice";
 import { INavItem } from "../types";
@@ -133,7 +134,7 @@ const NavList = styled.ul`
   }
 `;
 const NavItem = styled.li<{ active: string }>`
-  color: #122434;
+  color: ${baseTheme.colors.black};
   font-size: 12px;
   line-height: 150%;
   margin-right: 28px;
@@ -144,10 +145,10 @@ const NavRight = styled.div`
   position: relative;
 `;
 const LogOut = styled.button`
-  background-color: white;
+  background-color: ${baseTheme.colors.white};
   width: 100%;
   padding: 5px;
-  color: red;
+  color: ${baseTheme.colors.red};
   border: 1px solid red;
   margin-top: 10px;
   position: absolute;
@@ -184,5 +185,5 @@ const Username = styled.h5`
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #122434;
+  color: ${baseTheme.colors.black};
 `;
