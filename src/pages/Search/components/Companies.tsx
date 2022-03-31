@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { SvgDot, SvgLike } from "../../../assets/icons";
+import { SvgLike } from "../../../assets/icons";
 import { ImageNotFound } from "../../../assets/images";
 import { Loader } from "../../../components";
 import { baseTheme } from "../../../helpers/baseTheme";
@@ -70,12 +71,14 @@ export const Companies: React.FC<ICompaniesProps> = ({
                 >
                   <SvgLike />
                 </Button>
-                <Button
-                  border={`1px solid ${baseTheme.colors.blue}`}
-                  maxWidth="unset"
-                >
-                  Profile
-                </Button>
+                <CustomLink to={`/companies/${company.id}`}>
+                  <Button
+                    border={`1px solid ${baseTheme.colors.blue}`}
+                    maxWidth="unset"
+                  >
+                    Profile
+                  </Button>
+                </CustomLink>
               </Actions>
             </RightBlock>
           </Company>
@@ -270,4 +273,6 @@ const Button = styled.button<{ border: string; maxWidth: string }>`
     margin-right: 0;
   }
 `;
-const Image = styled.img``;
+const CustomLink = styled(Link)`
+  width: 100%;
+`;

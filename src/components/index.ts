@@ -6,3 +6,5 @@ export { ErrorSpan } from "./ErrorSpan";
 export { Navbar } from "./Navbar";
 export { NavMobile } from "./NavMobile";
 export { Loader } from "./Loader";
+export { Container } from "./Container";
+export { Header } from "./Header";

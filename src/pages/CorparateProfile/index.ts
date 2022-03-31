@@ -1,0 +1,1 @@
+export { CorparateProfilePage } from "./CorparateProfilePage";

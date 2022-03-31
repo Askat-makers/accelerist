@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Navbar } from "../../components";
-import { Container } from "../../components/Container";
+import { Navbar, Container } from "../../components";
 import { baseTheme } from "../../helpers/baseTheme";
 import { useAppDispatch, useAppSelector } from "../../helpers/customHooks";
 import { getCompanies } from "../../store/actions";
