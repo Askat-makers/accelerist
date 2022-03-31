@@ -14,9 +14,11 @@ export const Header: React.FC<{ title: string; goBack?: boolean }> = ({
     <Root>
       <Container>
         <Wrapper>
-          <Cursor onClick={() => navigate(-1)}>
-            <SvgArrowLeft />
-          </Cursor>
+          {goBack && (
+            <Cursor onClick={() => navigate(-1)}>
+              <SvgArrowLeft />
+            </Cursor>
+          )}
           <Title goBack={goBack}>{title}</Title>
         </Wrapper>
       </Container>
